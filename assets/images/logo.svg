@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" id="Layer_1" version="1.1" viewBox="159.84 124.49 484.96 84.2">
+  <!-- Generator: Adobe Illustrator 29.7.1, SVG Export Plug-In . SVG Version: 2.1.1 Build 8)  -->
+  <defs>
+    <style>
+      .st0 {
+        stroke-width: 5px;
+      }
+
+      .st0, .st1, .st2, .st3 {
+        isolation: isolate;
+      }
+
+      .st0, .st4, .st2, .st3 {
+        fill: #099;
+      }
+
+      .st0, .st2 {
+        stroke-miterlimit: 10;
+      }
+
+      .st0, .st2, .st3 {
+        font-family: Mont-ExtraLightDEMO, Mont;
+        font-size: 72px;
+        font-weight: 200;
+      }
+
+      .st5 {
+        letter-spacing: .05em;
+      }
+
+      .st5, .st2 {
+        stroke: #099;
+      }
+
+      .st2 {
+        stroke-width: 2px;
+      }
+
+      .st2, .st3, .st6 {
+        letter-spacing: .05em;
+      }
+
+      .st6 {
+        stroke: #000;
+      }
+    </style>
+  </defs>
+  <g id="Layer_7">
+    <g class="st1">
+      <g class="st1">
+        <g class="st1">
+          <text class="st3" transform="translate(219.89 190.99)"><tspan x="0" y="0" xml:space="preserve"> cuna</tspan></text>
+        </g>
+      </g>
+      <g class="st1">
+        <g class="st1">
+          <text class="st0" transform="translate(219.89 190.99)"><tspan class="st6" x="0" y="0"> </tspan><tspan class="st5" x="23.83" y="0">cuna</tspan></text>
+        </g>
+      </g>
+      <g class="st1">
+        <g class="st1">
+          <text class="st3" transform="translate(445.9 190.99)"><tspan x="0" y="0">dream</tspan></text>
+        </g>
+      </g>
+      <g class="st1">
+        <g class="st1">
+          <text class="st2" transform="translate(445.9 190.99)"><tspan x="0" y="0">dream</tspan></text>
+        </g>
+      </g>
+    </g>
+  </g>
+  <g id="Layer_6">
+    <path class="st4" d="M160.29,156.24c-.02.14-.03.29-.02.44.47,4.19-3.32,28.48,5.34,28.18.75.1,1.34.69,1.39,1.44.21,2.79,1.59,8.99,9.52,10.04,0,0,6.75,1.03,10.14-6.03-.09-1.72,13.63-.85,15.43-1.11.28-.04.58,0,.84.11.27.12.51.33.67.59,1.11,1.76,4.31,5.99,9.23,5.7,0,0,10.24,0,10.02-10.19-.02-.81.61-1.49,1.42-1.58,6.26-2.18,5.21-1.62,4.66-24.31,0-.25-.04-.57-.26-.87-.95-1.29-3.9.12-4.88-1.14-.2-.25-.22-.57-.28-1.22-.1-1.26-.28-3.45.99-4.81,1.34-1.43,4.24-1.91,5.02-1.97.09,0,.4-.03.71-.22.49-.31.72-.91.7-1.49-.04-.93-.92-1.59-1.84-1.49-15.32,1.52-6.87,10.67-11.53,11.62-7.83.18-15.65.36-23.48.54-1.81.04-3.31-1.41-3.33-3.22-.07-7.04-.32-22.96-1.09-23.34-.95-.58-25.04-1.92-29.37,24.33h0Z"/>
+    <path class="st4" d="M760.94,495.29"/>
+  </g>
+</svg>
