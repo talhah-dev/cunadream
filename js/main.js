@@ -1,6 +1,4 @@
 document.addEventListener('DOMContentLoaded', () => {
-    gsap.registerPlugin(ScrollTrigger);
-
     const loader = document.getElementById('loader');
     const loaderChars = document.querySelectorAll('.loader-char');
 
@@ -36,38 +34,6 @@ document.addEventListener('DOMContentLoaded', () => {
         duration: 800,
         easing: 'ease-out-cubic'
     });
-
-    const coordinationSection = document.getElementById('coordination-section');
-    const coordinationText = document.querySelectorAll('#coordination-heading, #coordination-text');
-
-    if (coordinationSection && coordinationText.length) {
-        const coordinationMedia = gsap.matchMedia();
-
-        coordinationMedia.add('(min-width: 1024px) and (prefers-reduced-motion: no-preference)', () => {
-            gsap.set(coordinationText, { opacity: 0.15 });
-
-            const revealTimeline = gsap.timeline({
-                scrollTrigger: {
-                    trigger: coordinationSection,
-                    start: 'top top',
-                    end: '+=100%',
-                    pin: true,
-                    pinSpacing: true,
-                    scrub: true,
-                    anticipatePin: 1,
-                    invalidateOnRefresh: true
-                }
-            });
-
-            revealTimeline.to(coordinationText, { opacity: 1, ease: 'none', duration: 1 });
-
-            return () => revealTimeline.kill();
-        });
-
-        coordinationMedia.add('(max-width: 1023px), (prefers-reduced-motion: reduce)', () => {
-            gsap.set(coordinationText, { opacity: 1 });
-        });
-    }
 
     const mobileMenuBtn = document.getElementById('mobile-menu-btn');
     const mobileMenu = document.getElementById('mobile-menu');
