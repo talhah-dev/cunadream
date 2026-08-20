@@ -1,33 +1,36 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const loader = document.getElementById('loader');
-    const loaderChars = document.querySelectorAll('.loader-char');
 
-    if (loader && loaderChars.length) {
+    const loader = document.getElementById('loader');
+    const loaderContent = document.querySelector('.loader-content');
+
+    if (loader) {
         document.body.style.overflow = 'hidden';
 
-        const charDelay = 120;
-        const startDelay = 400;
-        const totalLetterTime = startDelay + (loaderChars.length * charDelay) + 400;
+        const textVisibleTime = 1200;   
+        const fadeOutDuration = 500;   
+        const wipeDuration = 800;      
 
-        loaderChars.forEach((char, i) => {
-            setTimeout(() => {
-                char.classList.add('fade-out');
-            }, startDelay + (i * charDelay));
-        });
+        setTimeout(() => {
+            if (loaderContent) {
+                loaderContent.classList.add('fade-out');
+            }
+        }, textVisibleTime);
 
         setTimeout(() => {
             loader.classList.add('loader-hidden');
-            setTimeout(() => {
-                document.body.style.overflow = '';
-                loader.style.display = 'none';
-            }, 600);
-        }, totalLetterTime);
+        }, textVisibleTime + fadeOutDuration);
+
+        setTimeout(() => {
+            document.body.style.overflow = '';
+            loader.style.display = 'none';
+        }, textVisibleTime + fadeOutDuration + wipeDuration);
     }
+
 
     const lenis = new Lenis({
         autoRaf: true,
     });
-    
+
     AOS.init({
         once: true,
         offset: 50,
@@ -81,13 +84,13 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     const langContainers = document.querySelectorAll('.lang-dropdown-container');
-    
+
     langContainers.forEach(container => {
         const btn = container.querySelector('.lang-btn');
         const dropdown = container.querySelector('.lang-dropdown');
         const chevron = container.querySelector('.lang-chevron');
         const options = container.querySelectorAll('.lang-option');
-        
+
         btn.addEventListener('click', (e) => {
             e.stopPropagation();
             langContainers.forEach(other => {
