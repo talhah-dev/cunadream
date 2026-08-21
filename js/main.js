@@ -4,26 +4,31 @@ document.addEventListener('DOMContentLoaded', () => {
     const loaderContent = document.querySelector('.loader-content');
 
     if (loader) {
-        document.body.style.overflow = 'hidden';
+        if (!sessionStorage.getItem('loaderPlayed')) {
+            document.body.style.overflow = 'hidden';
+            sessionStorage.setItem('loaderPlayed', 'true');
 
-        const textVisibleTime = 1200;   
-        const fadeOutDuration = 500;   
-        const wipeDuration = 800;      
+            const textVisibleTime = 1200;   
+            const fadeOutDuration = 500;   
+            const wipeDuration = 800;      
 
-        setTimeout(() => {
-            if (loaderContent) {
-                loaderContent.classList.add('fade-out');
-            }
-        }, textVisibleTime);
+            setTimeout(() => {
+                if (loaderContent) {
+                    loaderContent.classList.add('fade-out');
+                }
+            }, textVisibleTime);
 
-        setTimeout(() => {
-            loader.classList.add('loader-hidden');
-        }, textVisibleTime + fadeOutDuration);
+            setTimeout(() => {
+                loader.classList.add('loader-hidden');
+            }, textVisibleTime + fadeOutDuration);
 
-        setTimeout(() => {
-            document.body.style.overflow = '';
+            setTimeout(() => {
+                document.body.style.overflow = '';
+                loader.style.display = 'none';
+            }, textVisibleTime + fadeOutDuration + wipeDuration);
+        } else {
             loader.style.display = 'none';
-        }, textVisibleTime + fadeOutDuration + wipeDuration);
+        }
     }
 
 
