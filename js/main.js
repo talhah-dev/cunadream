@@ -146,4 +146,32 @@ document.addEventListener('DOMContentLoaded', () => {
             el.textContent = fullLang;
         });
     }
+    const faqBtns = document.querySelectorAll('.faq-btn');
+    faqBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            const content = btn.nextElementSibling;
+            const icon = btn.querySelector('.faq-icon');
+            const isOpen = content.classList.contains('grid-rows-[1fr]');
+            
+            faqBtns.forEach(otherBtn => {
+                if (otherBtn !== btn) {
+                    const otherContent = otherBtn.nextElementSibling;
+                    const otherIcon = otherBtn.querySelector('.faq-icon');
+                    otherContent.classList.remove('grid-rows-[1fr]');
+                    otherContent.classList.add('grid-rows-[0fr]');
+                    otherIcon.classList.remove('rotate-45');
+                }
+            });
+
+            if (isOpen) {
+                content.classList.remove('grid-rows-[1fr]');
+                content.classList.add('grid-rows-[0fr]');
+                icon.classList.remove('rotate-45');
+            } else {
+                content.classList.remove('grid-rows-[0fr]');
+                content.classList.add('grid-rows-[1fr]');
+                icon.classList.add('rotate-45');
+            }
+        });
+    });
 });
