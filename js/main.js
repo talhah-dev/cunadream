@@ -179,7 +179,6 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     });
-    // Inject Custom Tally Modal into the DOM
     const modalHTML = `
         <div id="tally-modal" class="fixed inset-0 z-[100] bg-black/60 backdrop-blur-sm flex items-center justify-center lg:justify-end opacity-0 pointer-events-none transition-all duration-300">
             <div class="relative w-full h-full lg:h-[calc(100vh-2rem)] lg:my-4 lg:mr-4 bg-[#F7F3ED] shadow-2xl rounded-none lg:rounded-2xl flex flex-col transition-transform duration-300 translate-x-full lg:max-w-[600px] w-full overflow-hidden">
