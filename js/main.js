@@ -179,4 +179,68 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     });
-});
+    // Inject Custom Tally Modal into the DOM
+    const modalHTML = `
+        <div id="tally-modal" class="fixed inset-0 z-[100] bg-black/60 backdrop-blur-sm flex items-center justify-center lg:justify-end opacity-0 pointer-events-none transition-all duration-300">
+            <div class="relative w-full h-full lg:h-[calc(100vh-2rem)] lg:my-4 lg:mr-4 bg-[#F7F3ED] shadow-2xl rounded-none lg:rounded-2xl flex flex-col transition-transform duration-300 translate-x-full lg:max-w-[600px] w-full overflow-hidden">
+                <div class="flex items-center justify-between p-6 border-b border-charcoal/10 bg-[#F7F3ED] rounded-t-none lg:rounded-t-2xl sticky top-0 z-10">
+                    <h3 class="font-serif text-2xl text-aubergine">Start a Conversation</h3>
+                    <button id="close-tally-modal" class="p-2 -mr-2 text-charcoal hover:text-teal transition-colors cursor-pointer" aria-label="Close form">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M6 18L18 6M6 6l12 12"></path>
+                        </svg>
+                    </button>
+                </div>
+                <div class="flex-1 overflow-hidden h-full">
+                    <iframe src="https://tally.so/embed/81b85k?transparentBackground=1" width="100%" height="100%" frameborder="0" marginheight="0" marginwidth="0" title="Start a Conversation" class="w-full h-full"></iframe>
+                </div>
+            </div>
+        </div>
+    `;
+    document.body.insertAdjacentHTML('beforeend', modalHTML);
+
+    const tallyModal = document.getElementById('tally-modal');
+    const closeTallyModal = document.getElementById('close-tally-modal');
+
+    function openModal() {
+        if (tallyModal) {
+            tallyModal.classList.remove('opacity-0', 'pointer-events-none');
+            const panel = tallyModal.querySelector('div');
+            if (panel) {
+                panel.classList.remove('translate-x-full');
+            }
+            document.body.style.overflow = 'hidden';
+        }
+    }
+
+    function closeModal() {
+        if (tallyModal) {
+            tallyModal.classList.add('opacity-0', 'pointer-events-none');
+            const panel = tallyModal.querySelector('div');
+            if (panel) {
+                panel.classList.add('translate-x-full');
+            }
+            document.body.style.overflow = '';
+        }
+    }
+
+    document.addEventListener('click', (e) => {
+        const target = e.target.closest('a[href*="tally-open"], button[data-tally-open], a[href*="start-conversation"]');
+        if (target) {
+            e.preventDefault();
+            openModal();
+        }
+    });
+
+    if (closeTallyModal) {
+        closeTallyModal.addEventListener('click', closeModal);
+    }
+
+    if (tallyModal) {
+        tallyModal.addEventListener('click', (e) => {
+            if (e.target === tallyModal) {
+                closeModal();
+            }
+        });
+    }
+})
