@@ -208,7 +208,11 @@ document.addEventListener('DOMContentLoaded', () => {
             if (panel) {
                 panel.classList.remove('translate-x-full');
             }
+            document.documentElement.style.overflow = 'hidden';
             document.body.style.overflow = 'hidden';
+            if (typeof lenis !== 'undefined') {
+                lenis.stop();
+            }
         }
     }
 
@@ -219,7 +223,11 @@ document.addEventListener('DOMContentLoaded', () => {
             if (panel) {
                 panel.classList.add('translate-x-full');
             }
+            document.documentElement.style.overflow = '';
             document.body.style.overflow = '';
+            if (typeof lenis !== 'undefined') {
+                lenis.start();
+            }
         }
     }
 
