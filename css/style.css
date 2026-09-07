@@ -14,6 +14,27 @@ body {
     -moz-osx-font-smoothing: grayscale;
 }
 
+section, main > div, [id] {
+    scroll-margin-top: 5.5rem;
+}
+
+@media (max-width: 640px) {
+    p, li, .body-text {
+        font-size: 0.94rem;
+        line-height: 1.62;
+    }
+}
+
+@media (max-height: 560px) {
+    #main-header .h-20 {
+        height: 3.75rem !important;
+    }
+    .md\:sticky {
+        position: static !important;
+        top: auto !important;
+    }
+}
+
 .header-scrolled {
     @apply shadow-sm bg-ivory/95 backdrop-blur-md;
     box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.05);
@@ -51,27 +72,4 @@ body {
     text-transform: uppercase;
     letter-spacing: 0.05em;
     border-radius: 8px;
-}
-
-/* Loader */
-#loader {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-    transition: transform 0.8s cubic-bezier(0.77, 0, 0.175, 1);
-    transform: translateY(0);
-}
-
-#loader.loader-hidden {
-    transform: translateY(-100%);
-}
-
-.loader-content {
-    opacity: 1;
-    transition: opacity 0.5s ease;
-}
-
-.loader-content.fade-out {
-    opacity: 0;
 }
