@@ -27,7 +27,10 @@ section, main > div, [id] {
 
 @media (max-height: 560px) {
     #main-header .h-20 {
-        height: 3.75rem !important;
+        height: 3.5rem !important;
+    }
+    section, main > div, [id] {
+        scroll-margin-top: 4.25rem !important;
     }
     .md\:sticky {
         position: static !important;
